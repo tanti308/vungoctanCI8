@@ -9,6 +9,9 @@ public class GameWindow extends JFrame {
     private GameCanvas gameCanvas;
     private long lastTime = 0;
 
+    private int vXEnemy = 10;
+    private int vYEnemy = 10;
+
     public Random random = new Random();
 
     public GameWindow() {
@@ -83,8 +86,24 @@ public class GameWindow extends JFrame {
             if (currentTime - this.lastTime >= 17_000_000) {
                 this.gameCanvas.positionXStar -=3;
 
-                this.gameCanvas.positionXEnemy -=5;
-                this.gameCanvas.postionYEnemy -=2;
+
+
+                if (this.gameCanvas.positionXEnemy == 0){
+                    vXEnemy = 10;
+                }
+                if (this.gameCanvas.positionXEnemy ==1024){
+                    vXEnemy = -10;
+                }
+                if (this.gameCanvas.positionYEnemy ==600) {
+                    vYEnemy = -10;
+                }
+                if (this.gameCanvas.positionYEnemy ==0) {
+                    vYEnemy = 10;
+                }
+
+                this.gameCanvas.positionXEnemy += vXEnemy;
+                this.gameCanvas.positionYEnemy += vYEnemy;
+
                 this.gameCanvas.renderAll();
                 this.gameCanvas.repaint();
                 this.lastTime = currentTime;

@@ -18,7 +18,9 @@ public class GameCanvas extends JPanel {
     public int positionXPlayer = 600;
     public int positionYPlayer = 200;
     public int positionXEnemy = 100;
-    public int postionYEnemy = 200;
+    public int positionYEnemy = 200;
+
+
 
     public GameCanvas() {
         // Cách đặt tên biến
@@ -70,7 +72,11 @@ public class GameCanvas extends JPanel {
         this.graphics.fillRect(0,0,1024,600);
         this.graphics.drawImage(this.starImage,positionXStar,positionYStar,10,10,null);
         this.graphics.drawImage(this.playerImage,positionXPlayer,positionYPlayer,20,20,null);
-        this.graphics.drawImage(this.enemyImage,positionXEnemy,postionYEnemy,15,15,null);
+        this.graphics.drawImage(this.enemyImage,positionXEnemy,positionYEnemy,20,20,null);
+
+
+
+
         this.repaint();
     }
 
